@@ -69,8 +69,9 @@
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(150, 30);
             btnLogin.TabIndex = 5;
-            btnLogin.Text = "Войти";
+            btnLogin.Text = "Выход";
             btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += BtnLogut_Click;
             // 
             // dgvProducts
             // 
