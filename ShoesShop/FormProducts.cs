@@ -43,6 +43,10 @@ namespace ShoesShop
 
             CurrentUser = user;
             IsGuest = guest;
+            if(IsGuest==false)
+            {
+                buttonOrders.Visible = true;
+            }
 
             lblUserName.Text = IsGuest ? "Гость" : CurrentUser.FullName;
 
@@ -60,7 +64,7 @@ namespace ShoesShop
                         .Include(i => i.Manufacturer)
                         .Include(i => i.Supplier)
                         .Include(i => i.Measure)
-                        .Include(i=>i.ProductType)
+                        .Include(i => i.ProductType)
                         .ToList();
 
                     dgvProducts.SuspendLayout();
@@ -160,6 +164,12 @@ namespace ShoesShop
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);
+        }
+
+        private void buttonOrders_Click(object sender, EventArgs e)
+        {
+            FormOrders form = new FormOrders(CurrentUser);
+            form.ShowDialog();
         }
     }
 

@@ -30,6 +30,7 @@
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             panelTop = new Panel();
+            buttonOrders = new Button();
             lblUserName = new Label();
             btnLogin = new Button();
             dgvProducts = new DataGridView();
@@ -39,6 +40,7 @@
             // 
             // panelTop
             // 
+            panelTop.Controls.Add(buttonOrders);
             panelTop.Controls.Add(lblUserName);
             panelTop.Controls.Add(btnLogin);
             panelTop.Dock = DockStyle.Top;
@@ -47,6 +49,21 @@
             panelTop.Padding = new Padding(0, 0, 0, 10);
             panelTop.Size = new Size(964, 40);
             panelTop.TabIndex = 0;
+            // 
+            // buttonOrders
+            // 
+            buttonOrders.BackColor = Color.MediumSpringGreen;
+            buttonOrders.Dock = DockStyle.Right;
+            buttonOrders.FlatAppearance.BorderSize = 0;
+            buttonOrders.FlatStyle = FlatStyle.Flat;
+            buttonOrders.Location = new Point(619, 0);
+            buttonOrders.Name = "buttonOrders";
+            buttonOrders.Size = new Size(150, 30);
+            buttonOrders.TabIndex = 7;
+            buttonOrders.Text = "Заказы";
+            buttonOrders.UseVisualStyleBackColor = false;
+            buttonOrders.Visible = false;
+            buttonOrders.Click += buttonOrders_Click;
             // 
             // lblUserName
             // 
@@ -125,5 +142,6 @@
         private DataGridView dgvProducts;
         private Label lblUserName;
         private Button btnLogin;
+        public Button buttonOrders;
     }
 }

@@ -20,6 +20,7 @@ namespace ShoesShop
                             formLogin.CurrentUser,
                             formLogin.IsGuest))
                         {
+                            
                             if (formProducts.ShowDialog() == DialogResult.Cancel)
                             {
                                 continue;
